@@ -15,15 +15,9 @@ class Solution:
 
 
     def dfs(self, i, j, grid, index, word, res):
-        # print('i, j', i, j, index)
-        # if index == len(word)-1 and grid[i][j] == word[index]:
-        #     print('Found: ', word, index, i, j)
-        #     res.append(word)
-        #     return
         if i < 0 or i >= len(grid) or j < 0 or j >= len(grid[0]) or grid[i][j] != word[index]:
             return
         elif index == len(word)-1 and grid[i][j] == word[index]:
-            # print('Found: ', word, index, i, j)
             if word not in res:
                 res.append(word)
             return
