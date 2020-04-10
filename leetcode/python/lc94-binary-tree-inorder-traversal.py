@@ -29,6 +29,19 @@ class Solution:
         return result
         
         
+class Solution2:
+    def inorderTraversal(self, root: TreeNode) -> List[int]:
+        result = []
+        self.inorderDfsRecursive(root, result)
+        return result
+        
+    def inorderRecursive(self, root, result):
+        if root:
+            if root.left:
+                self.inorderDfsRecursive(root.left, result)
+            result.append(root.val)
+            if root.right:
+                self.inorderDfsRecursive(root.right, result)
             
             
         

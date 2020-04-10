@@ -29,3 +29,18 @@ class Solution:
                 if curr.left:
                     stack.append((curr.left, False))
         return result
+
+
+class Solution2:
+    def postorderTraversal(self, root: TreeNode) -> List[int]:
+        result = []
+        self.postorderRecursive(root, result)
+        return result
+        
+    def postorderRecursive(self, root, result):
+        if root:
+            if root.left:
+                self.postorderRecursive(root.left, result)
+            if root.right:
+                self.postorderRecursive(root.right, result)
+            result.append(root.val)

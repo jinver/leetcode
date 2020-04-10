@@ -23,5 +23,20 @@ class Solution:
             if node.left:
                 stack.append(node.left)
         return result
+
+class Solution2:
+    def preorderTraversal(self, root: TreeNode) -> List[int]:
+        result = []
+        self.preorderRecursive(root, result)
+        return result
+        
+        
+    def preorderRecursive(self, root, result):
+        if root:
+            result.append(root.val)
+            if root.left:
+                self.preorderRecursive(root.left, result)
+            if root.right:
+                self.preorderRecursive(root.right, result)
             
             
